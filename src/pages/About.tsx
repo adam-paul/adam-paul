@@ -14,9 +14,9 @@ const About = () => {
             <div className="space-y-4 text-steel-700">
               <p>
                 I'm a full-stack developer with a background in scientific computing. 
-                I focus on creating interesting, scalable, and maintainable applications, 
-                using an AI-first development approach that wrangles LLM output into
-                simple—and perhaps one day even elegant—applications (em dashes mine).
+                I focus on creating interesting, scalable, and maintainable applications,
+                taking an AI-first approach that wrangles LLM output into useful — and 
+                perhaps one day even elegant — code (em dashes mine).
               </p>
               <p>
                 I am attempting to create a world in which the breathtaking and terrifying speed 
@@ -29,7 +29,7 @@ const About = () => {
             <h2 className="text-xl font-medium text-steel-800 mb-6 tracking-tight">Contact</h2>
             <div className="space-y-4 text-steel-700">
               <p>
-                I'm currently available for interesting conversations and project collaborations. 
+                I'm currently available for interesting conversations and project collaboration. 
                 If you want to connect, feel free to reach out.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 mt-6">
@@ -46,6 +46,14 @@ const About = () => {
                   className="inline-flex items-center justify-center h-10 px-6 text-sm font-medium tracking-wide text-steel-800 border border-steel-200 rounded-sm hover:bg-steel-50 transition-colors"
                 >
                   Xitter
+                </a>
+                <a 
+                  href="https://www.chess.com/member/notadampaul" 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className="inline-flex items-center justify-center h-10 px-6 text-sm font-medium tracking-wide text-steel-800 border border-steel-200 rounded-sm hover:bg-steel-50 transition-colors"
+                >
+                  Chess.com
                 </a>
               </div>
             </div>

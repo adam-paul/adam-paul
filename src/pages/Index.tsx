@@ -26,7 +26,7 @@ const Index = () => {
       
       <main className="pt-24 px-6 pb-16">
         <section id="projects" className="max-w-7xl mx-auto">
-          <h2 className="text-xl font-medium text-steel-800 mb-8 tracking-tight">Featured Projects</h2>
+          <h2 className="text-xl font-medium text-steel-800 mb-8 tracking-tight">Projects</h2>
           
           <div className="project-scroll-container md:pb-6">
             {projects.map((project) => (
@@ -36,6 +36,10 @@ const Index = () => {
                 onClick={handleProjectClick}
               />
             ))}
+          </div>
+
+          <div className="text-center font-mono text-steel-800 mt-16 mb-8 tracking-tight">
+            Now they are many, but of one body.
           </div>
         </section>
       </main>
