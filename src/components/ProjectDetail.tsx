@@ -13,24 +13,37 @@ interface ProjectDetailProps {
 const ProjectDetail: React.FC<ProjectDetailProps> = ({ project, onClose, isOpen }) => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [isClosing, setIsClosing] = useState(false);
-
-  useEffect(() => {
-    if (isOpen) {
-      document.body.style.overflow = 'hidden';
-    }
-
-    return () => {
-      document.body.style.overflow = 'auto';
-    };
-  }, [isOpen]);
-
-  const handleClose = () => {
+  
+  const handleClose = React.useCallback(() => {
     setIsClosing(true);
     setTimeout(() => {
       onClose();
       setIsClosing(false);
     }, 300);
-  };
+  }, [onClose]);
+
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = 'hidden';
+      
+      const handleEscKey = (event: KeyboardEvent) => {
+        if (event.key === 'Escape') {
+          handleClose();
+        }
+      };
+      
+      window.addEventListener('keydown', handleEscKey);
+      
+      return () => {
+        document.body.style.overflow = 'auto';
+        window.removeEventListener('keydown', handleEscKey);
+      };
+    }
+    
+    return () => {
+      document.body.style.overflow = 'auto';
+    };
+  }, [isOpen, handleClose]);
 
   const nextSlide = (e: React.MouseEvent) => {
     e.stopPropagation();
@@ -57,7 +70,7 @@ const ProjectDetail: React.FC<ProjectDetailProps> = ({ project, onClose, isOpen 
         onClick={(e) => e.stopPropagation()}
       >
         <button 
-          className="absolute top-6 right-6 w-10 h-10 flex items-center justify-center rounded-full bg-steel-100 hover:bg-steel-200 transition-colors text-steel-800 z-50"
+          className="absolute top-6 right-6 w-10 h-10 flex items-center justify-center text-steel-800 hover:text-steel-600 transition-colors z-50"
           onClick={handleClose}
         >
           <X size={20} />
