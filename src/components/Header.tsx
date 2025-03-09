@@ -16,7 +16,7 @@ const Header: React.FC<HeaderProps> = ({ className }) => {
       className
     )}>
       <Link to="/" className="font-mono text-lg font-medium tracking-tight text-steel-800">
-        John Doe
+        adam.paul
       </Link>
       <nav className="flex space-x-6">
         <Link 
