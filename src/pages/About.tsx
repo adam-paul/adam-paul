@@ -29,7 +29,7 @@ const About = () => {
             <h2 className="text-xl font-medium text-steel-800 mb-6 tracking-tight">Contact</h2>
             <div className="space-y-4 text-steel-700">
               <p>
-                I'm currently available for interesting conversations and project collaboration. 
+                Currently available for interesting conversations and project collaboration. 
                 If you want to connect, feel free to reach out.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 mt-6">
