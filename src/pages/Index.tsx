@@ -39,7 +39,7 @@ const Index = () => {
           </div>
 
           <div className="text-center font-mono text-steel-800 mt-16 mb-8 tracking-tight">
-            Now they are many, but of one body.
+            For now they are many, but of one body.
           </div>
         </section>
       </main>
