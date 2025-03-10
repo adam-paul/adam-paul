@@ -38,7 +38,7 @@ const Header: React.FC<HeaderProps> = ({ className }) => {
           About
         </Link>
         <a 
-          href="https://github.com" 
+          href="https://github.com/adam-paul" 
           target="_blank" 
           rel="noopener noreferrer" 
           className="text-steel-600 hover:text-steel-900 text-sm transition-colors"
