@@ -4,18 +4,18 @@ import type { Project } from '@/components/ProjectCard';
 const projects: Project[] = [
   {
     id: '1',
-    title: 'AI-Powered Analytics Dashboard',
-    summary: 'An intelligent dashboard visualizing complex data with AI-driven insights.',
-    description: 'This project features a sophisticated analytics dashboard built with React and D3.js, providing AI-driven insights on complex datasets. It includes interactive visualizations, real-time data updates, and machine learning-powered trend analysis to help businesses make data-driven decisions.',
-    thumbnail: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2070&auto=format&fit=crop',
+    title: 'Hackerchat',
+    summary: 'A terminal-themed, browser-based Slack clone with chatbots for querying the message space.',
+    description: 'Minimalist chat interface with channels, threads, subthreads, direct messages, ASCII reactions, user presence tracking, file and picture uploads, webhooks for idle disconnect, and more. A chatbot is available 24/7 allowing queries to a RAG API vector database of the message store in natural language. Command line aesthetic for maximal camp. Built in three days. If you can\'t connect to the websockets, I haven\'t paid my Railway bill.',
+    thumbnail: 'https://i.imgur.com/eZJ1CiT.png',
     images: [
-      'https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2070&auto=format&fit=crop',
-      'https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2015&auto=format&fit=crop',
-      'https://images.unsplash.com/photo-1543286386-713bdd548da4?q=80&w=2070&auto=format&fit=crop'
+      'https://i.imgur.com/Zxx8r5Q.png',
+      'https://i.imgur.com/r44s8je.png',
+      'https://i.imgur.com/qvvuCy0.png',
     ],
-    technologies: ['React', 'TypeScript', 'D3.js', 'Machine Learning', 'Tailwind CSS'],
-    githubUrl: 'https://github.com',
-    liveUrl: 'https://example.com'
+    technologies: ['React', 'TypeScript', 'Next.js', 'Tailwind CSS', 'Vercel', 'Neon postgres', 'REST webhooks', 'RAG', 'Pinecone vectorstore'],
+    githubUrl: 'https://github.com/adam-paul/hackerchat',
+    liveUrl: 'https://hackerchat-adampaul.vercel.app/'
   },
   {
     id: '2',
