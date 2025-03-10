@@ -1,8 +1,9 @@
 
 import React, { useState, useEffect } from 'react';
-import { X, ChevronLeft, ChevronRight, Github, ExternalLink } from 'lucide-react';
+import { X, ChevronLeft, ChevronRight, Github, ExternalLink, Maximize2 } from 'lucide-react';
 import type { Project } from './ProjectCard';
 import { cn } from '@/lib/utils';
+import PhotoExpand from './PhotoExpand';
 
 interface ProjectDetailProps {
   project: Project;
@@ -13,6 +14,7 @@ interface ProjectDetailProps {
 const ProjectDetail: React.FC<ProjectDetailProps> = ({ project, onClose, isOpen }) => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [isClosing, setIsClosing] = useState(false);
+  const [photoExpanded, setPhotoExpanded] = useState(false);
   
   const handleClose = React.useCallback(() => {
     setIsClosing(true);
@@ -28,7 +30,11 @@ const ProjectDetail: React.FC<ProjectDetailProps> = ({ project, onClose, isOpen 
       
       const handleEscKey = (event: KeyboardEvent) => {
         if (event.key === 'Escape') {
-          handleClose();
+          if (photoExpanded) {
+            setPhotoExpanded(false);
+          } else {
+            handleClose();
+          }
         }
       };
       
@@ -43,7 +49,7 @@ const ProjectDetail: React.FC<ProjectDetailProps> = ({ project, onClose, isOpen 
     return () => {
       document.body.style.overflow = 'auto';
     };
-  }, [isOpen, handleClose]);
+  }, [isOpen, handleClose, photoExpanded]);
 
   const nextSlide = (e: React.MouseEvent) => {
     e.stopPropagation();
@@ -53,6 +59,11 @@ const ProjectDetail: React.FC<ProjectDetailProps> = ({ project, onClose, isOpen 
   const prevSlide = (e: React.MouseEvent) => {
     e.stopPropagation();
     setCurrentSlide((prev) => (prev === 0 ? project.images.length - 1 : prev - 1));
+  };
+
+  const expandPhoto = (e: React.MouseEvent) => {
+    e.stopPropagation();
+    setPhotoExpanded(true);
   };
 
   if (!isOpen) return null;
@@ -79,12 +90,22 @@ const ProjectDetail: React.FC<ProjectDetailProps> = ({ project, onClose, isOpen 
         <div className="flex flex-col md:flex-row gap-8 mt-12">
           {/* Slideshow on left (top in mobile) */}
           <div className="md:w-1/2 w-full">
-            <div className="relative aspect-video bg-steel-100 rounded-sm overflow-hidden">
+            <div className="relative aspect-video bg-steel-100 rounded-sm overflow-hidden group">
               <img 
                 src={project.images[currentSlide]} 
                 alt={`${project.title} - slide ${currentSlide + 1}`}
-                className="w-full h-full object-cover"
+                className="w-full h-full object-cover cursor-pointer"
+                onClick={expandPhoto}
               />
+
+              {/* Expand button */}
+              <button
+                className="absolute top-2 right-2 w-8 h-8 flex items-center justify-center rounded-full bg-steel-800/50 hover:bg-steel-800/70 transition-colors text-white opacity-0 group-hover:opacity-100"
+                onClick={expandPhoto}
+                aria-label="Expand image"
+              >
+                <Maximize2 size={16} />
+              </button>
 
               {project.images.length > 1 && (
                 <>
@@ -168,6 +189,14 @@ const ProjectDetail: React.FC<ProjectDetailProps> = ({ project, onClose, isOpen 
           </div>
         </div>
       </div>
+
+      {/* Photo expand modal */}
+      <PhotoExpand 
+        images={project.images}
+        currentIndex={currentSlide}
+        onClose={() => setPhotoExpanded(false)}
+        isOpen={photoExpanded}
+      />
     </div>
   );
 };

@@ -6,14 +6,14 @@ const projects: Project[] = [
     id: '1',
     title: 'Hackerchat',
     summary: 'A terminal-themed, browser-based Slack clone with chatbots for querying the message space.',
-    description: 'Minimalist chat interface with channels, threads, subthreads, direct messages, ASCII reactions, user presence tracking, file and picture uploads, webhooks for idle disconnect, and more. A chatbot is available 24/7 allowing queries to a RAG API vector database of the message store in natural language. Command line aesthetic for maximal camp. Built in three days. If you can\'t connect to the websockets, I haven\'t paid my Railway bill.',
+    description: 'Minimalist chat interface with channels, threads, subthreads, direct messages, ASCII reactions, user presence tracking, file and picture uploads, webhooks for idle disconnect, and more. A chatbot is available 24/7 for natural language queries to the message store through a vector database and RAG API. Command line aesthetic for maximal camp. Built in three days. If you can\'t connect to the websockets, I haven\'t paid my Railway bill.',
     thumbnail: 'https://i.imgur.com/eZJ1CiT.png',
     images: [
       'https://i.imgur.com/Zxx8r5Q.png',
       'https://i.imgur.com/r44s8je.png',
       'https://i.imgur.com/qvvuCy0.png',
     ],
-    technologies: ['React', 'TypeScript', 'Next.js', 'Tailwind CSS', 'Vercel', 'Neon postgres', 'REST webhooks', 'RAG', 'Pinecone vectorstore'],
+    technologies: ['React', 'TypeScript', 'Next.js', 'Tailwind CSS', 'Vercel', 'postgres', 'RAG w/ Pinecone vectorstore'],
     githubUrl: 'https://github.com/adam-paul/hackerchat',
     liveUrl: 'https://hackerchat-adampaul.vercel.app/'
   },
