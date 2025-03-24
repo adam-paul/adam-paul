@@ -3,13 +3,18 @@ import React from 'react';
 import { cn } from '@/lib/utils';
 import { ArrowUpRight } from 'lucide-react';
 
+export interface MediaItem {
+  type: 'image' | 'video';
+  url: string;
+}
+
 export interface Project {
   id: string;
   title: string;
   description: string;
   summary: string;
   thumbnail: string;
-  images: string[];
+  images: MediaItem[];
   technologies: string[];
   githubUrl?: string;
   liveUrl?: string;

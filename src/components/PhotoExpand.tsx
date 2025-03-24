@@ -2,8 +2,10 @@ import React, { useEffect, useState } from 'react';
 import { X, ChevronLeft, ChevronRight } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
+import { MediaItem } from './ProjectCard';
+
 interface PhotoExpandProps {
-  images: string[];
+  images: MediaItem[];
   currentIndex: number;
   onClose: () => void;
   isOpen: boolean;
@@ -87,11 +89,20 @@ const PhotoExpand: React.FC<PhotoExpandProps> = ({
         </button>
 
         <div className="relative w-[90%] h-[90%] flex items-center justify-center">
-          <img 
-            src={images[currentImg]} 
-            alt={`Expanded view ${currentImg + 1}`}
-            className="max-w-full max-h-full object-contain"
-          />
+          {images[currentImg].type === 'image' ? (
+            <img 
+              src={images[currentImg].url} 
+              alt={`Expanded view ${currentImg + 1}`}
+              className="max-w-full max-h-full object-contain"
+            />
+          ) : (
+            <video 
+              src={images[currentImg].url} 
+              controls
+              autoPlay
+              className="max-w-full max-h-full object-contain"
+            />
+          )}
 
           {images.length > 1 && (
             <>

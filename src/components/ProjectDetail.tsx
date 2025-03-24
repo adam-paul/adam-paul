@@ -91,12 +91,21 @@ const ProjectDetail: React.FC<ProjectDetailProps> = ({ project, onClose, isOpen 
           {/* Slideshow on left (top in mobile) */}
           <div className="md:w-1/2 w-full">
             <div className="relative aspect-video bg-steel-100 rounded-sm overflow-hidden group">
-              <img 
-                src={project.images[currentSlide]} 
-                alt={`${project.title} - slide ${currentSlide + 1}`}
-                className="w-full h-full object-cover cursor-pointer"
-                onClick={expandPhoto}
-              />
+              {project.images[currentSlide].type === 'image' ? (
+                <img 
+                  src={project.images[currentSlide].url} 
+                  alt={`${project.title} - slide ${currentSlide + 1}`}
+                  className="w-full h-full object-cover cursor-pointer"
+                  onClick={expandPhoto}
+                />
+              ) : (
+                <video 
+                  src={project.images[currentSlide].url} 
+                  className="w-full h-full object-cover cursor-pointer"
+                  onClick={expandPhoto}
+                  controls
+                />
+              )}
 
               {/* Expand button */}
               <button
