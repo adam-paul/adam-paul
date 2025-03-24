@@ -4,6 +4,21 @@ import type { Project } from '@/components/ProjectCard';
 const projects: Project[] = [
   {
     id: '1',
+    title: 'Portals',
+    summary: 'A portal-based hub for game creators, providing a shared universe for the new wave of AI-enabled web games.',
+    description: 'Three.js is emerging as the new native animation layer for the web. This has been missing since the untimely demise of flash. Now, web games are back, and Portals is providing a way to create a user-generated game-world for accessing all these new games in one place. In the future, shared creator revenue, further in-game mechanics, an interoperable game assets layer, and many other things can be added. Imagine if the internet were fun again?',
+    thumbnail: 'https://i.imgur.com/WCY0Ohz.png',
+    images: [
+      'https://i.imgur.com/YSuq7Wg.mp4',
+      'https://i.imgur.com/MjUHgDV.png',
+      'https://i.imgur.com/LNKSqGa.png',
+    ],
+    technologies: ['React', 'TypeScript', 'Three.js', 'Neon serverless backend'],
+    githubUrl: 'https://github.com/adam-paul/portals',
+    liveUrl: 'https://game-portals.com/'
+  },
+  {
+    id: '2',
     title: 'Hackerchat',
     summary: 'A terminal-themed, browser-based Slack clone with chatbots for querying the message space.',
     description: 'Minimalist chat interface with channels, threads, subthreads, direct messages, ASCII reactions, user presence tracking, file and picture uploads, webhooks for idle disconnect, and more. A chatbot is available 24/7 for natural language queries to the message store through a vector database and RAG API. Command line aesthetic for maximal camp. Built in three days. If you can\'t connect to the websockets, I haven\'t paid my Railway bill.',
@@ -16,21 +31,6 @@ const projects: Project[] = [
     technologies: ['React', 'TypeScript', 'Next.js', 'Tailwind CSS', 'Vercel', 'postgres', 'RAG w/ Pinecone vectorstore'],
     githubUrl: 'https://github.com/adam-paul/hackerchat',
     liveUrl: 'https://hackerchat-adampaul.vercel.app/'
-  },
-  {
-    id: '2',
-    title: 'E-Commerce Microservices Platform',
-    summary: 'A scalable e-commerce platform built with microservices architecture.',
-    description: 'A fully-featured e-commerce platform built using a microservices architecture with Node.js and Docker. The system handles product catalog management, user authentication, shopping cart functionality, payment processing through Stripe, and order management, all communicating through a message broker system using RabbitMQ.',
-    thumbnail: 'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?q=80&w=2070&auto=format&fit=crop',
-    images: [
-      'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?q=80&w=2070&auto=format&fit=crop',
-      'https://images.unsplash.com/photo-1556740738-b6a63e27c4df?q=80&w=2070&auto=format&fit=crop',
-      'https://images.unsplash.com/photo-1556741533-6e6a62bd8b49?q=80&w=2070&auto=format&fit=crop'
-    ],
-    technologies: ['Node.js', 'Docker', 'Kubernetes', 'MongoDB', 'Express', 'RabbitMQ', 'Stripe API'],
-    githubUrl: 'https://github.com',
-    liveUrl: 'https://example.com'
   },
   {
     id: '3',
